@@ -72,10 +72,13 @@ python -m venv venv
 ## Instalar as dependências:
 pip install -r requirements.txt
 
+## Executar processor.py
+cd PRJ_PY_JSON
 python processor.py
 
+```
 
-## Formato do JSON esperado
+## Formato do JSON esperado ####################################################################################################################
 ## O ficheiro events.json deve conter uma lista de objetos no seguinte formato:
 
 [
