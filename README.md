@@ -1,4 +1,4 @@
-# 📊 # Processing Pipeline com Python
+# 📊 # Pipeline com Python
 
 Projeto em Python para processamento de eventos JSON, geração de estatísticas em CSV, tratamento de erros e testes unitários.
 
@@ -31,11 +31,31 @@ O projeto utiliza apenas bibliotecas nativas do Python.
 
 ## 📂 Estrutura do projeto
 .
-├── processor.py
-├── events.json
-├── stats.csv
-├── deadletter.json
-└── README.md
+
+PRJ_PY_JSON
+├── GeraDados/
+│   └── cria_json_2026.py
+│       └── events.json
+│
+├── src/
+│   └── processor.py
+│   └── events.json
+│   └── stats.csv
+│   └── deadletter.json
+│   └── .gitignore
+│   
+│
+
+├── requirements.txt
+├── README.md
+
+
+
+
+
+
+
+
 
 
 ---
@@ -45,24 +65,24 @@ O projeto utiliza apenas bibliotecas nativas do Python.
 Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repo.git
-cd seu-repo
+git clone https://github.com/gitvitct/PRJ_PY_JSON.git
+cd PRJ_PY_JSON
 
 
 ## Crie um ambiente virtual:
 
 python -m venv venv
-## source venv/bin/activate  # Linux/Mac
-## venv\Scripts\activate     # Windows
+  ## source venv/bin/activate  # Linux/Mac
+  ## venv\Scripts\activate     # Windows
 
 ## Instalar as dependências:
 pip install -r requirements.txt
 
-python script.py
+python processor.py
 
 
 ## Formato do JSON esperado
-## O arquivo events.json deve conter uma lista de objetos no seguinte formato:
+## O ficheiro events.json deve conter uma lista de objetos no seguinte formato:
 
 [
     {
@@ -79,9 +99,15 @@ python script.py
 ]
 
 
-## Saída esperada
+## Saída esperada stats.csv
 
-
+metric,value
+unique_users,491
+event_login,686
+event_logout,636
+event_purchase,664
+total_purchase_amount,164286.16
+average_purchase_amount,247.42
 
 
 

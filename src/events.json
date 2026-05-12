@@ -1,6 +1,6 @@
 [
   {
-    "event_type": "VIDALOKA",
+    "event_type": "UID_NAO_ENCONTRADO",
     "timestamp": "2026-05-01T00:03:29Z",
     "amount": null
     
@@ -12,7 +12,7 @@
     
   },
   {
-    "user_id": "user142",
+    "user_id": "EVENT_NAO_ENCONTRADO",
     
     "timestamp": "2026-03-18T17:03:52Z",
     "amount": null
