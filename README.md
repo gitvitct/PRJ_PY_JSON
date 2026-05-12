@@ -72,9 +72,11 @@ python -m venv venv
 ## Instalar as dependências:
 pip install -r requirements.txt
 
+
 ## Executar processor.py
 cd PRJ_PY_JSON/src
 python processor.py
+
 
 ```
 
