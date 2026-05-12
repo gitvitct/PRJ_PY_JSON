@@ -1,4 +1,4 @@
-# 📊 # Pipeline com Python ####################################################################################################################
+## Pipeline com Python ####################################################################################################################
 
 Projeto em Python para processamento de eventos JSON, geração de estatísticas em CSV, tratamento de erros e testes unitários.
 
@@ -56,7 +56,7 @@ PRJ_PY_JSON
 
 ## Instalação ####################################################################################################################
 
-Clone o repositório:
+## Clone o repositório:
 
 ```bash
 git clone https://github.com/gitvitct/PRJ_PY_JSON.git
