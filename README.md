@@ -34,7 +34,7 @@ O projeto utiliza apenas bibliotecas nativas do Python.
 
 PRJ_PY_JSON
 ├── GeraDados/
-│   └── cria_json_2026.py
+   └── cria_json_2026.py
 │       └── events.json
 │
 ├── src/
