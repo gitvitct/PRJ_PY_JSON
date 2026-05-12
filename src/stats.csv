@@ -1,0 +1,7 @@
+metric,value
+unique_users,491
+event_login,686
+event_logout,636
+event_purchase,664
+total_purchase_amount,164286.16
+average_purchase_amount,247.42

@@ -1,21 +1,41 @@
-# 📊 Processamento de Eventos JSON com Python
+# 📊 # Processing Pipeline com Python
 
-Este projeto lê um arquivo JSON contendo eventos de usuários e calcula a quantidade de `user_id` únicos utilizando Python e pandas.
+Projeto em Python para processamento de eventos JSON, geração de estatísticas em CSV, tratamento de erros e testes unitários.
+
+
+# Objetivo
+
+Este projeto simula um pipeline simples de engenharia de dados responsável por:
+
+- Ler eventos de um arquivo JSON
+- Validar estrutura e timestamps
+- Filtrar eventos dos últimos 30 dias
+- Gerar métricas estatísticas
+- Registrar eventos inválidos em deadletter
+- Executar testes unitários
 
 ---
 
 ## Tecnologias utilizadas
 
 - Python 3.8+
-- pandas
+  - json
+  - csv
+  - datetime
+  - unittest
+
+O projeto utiliza apenas bibliotecas nativas do Python.
+
 
 ---
 
 ## 📂 Estrutura do projeto
-├── events.json # Arquivo de entrada (dados)
-├── script.py # Script principal
-├── requirements.txt # Dependências do projeto
-└── README.md # Documentação
+.
+├── processor.py
+├── events.json
+├── stats.csv
+├── deadletter.json
+└── README.md
 
 
 ---
@@ -29,9 +49,9 @@ git clone https://github.com/seu-usuario/seu-repo.git
 cd seu-repo
 
 
-## Crie um ambiente virtual (opcional, mas recomendado):
+## Crie um ambiente virtual:
 
-## python -m venv venv
+python -m venv venv
 ## source venv/bin/activate  # Linux/Mac
 ## venv\Scripts\activate     # Windows
 
@@ -45,23 +65,22 @@ python script.py
 ## O arquivo events.json deve conter uma lista de objetos no seguinte formato:
 
 [
-  {
-    "user_id": "user1",
-    "event_type": "login",
-    "timestamp": "2025-09-01T10:00:00Z",
-    "amount": null
-  }
+    {
+        "user_id": "user1",
+        "event_type": "login",
+        "timestamp": "2026-05-01T10:00:00Z"
+    },
+    {
+        "user_id": "user2",
+        "event_type": "purchase",
+        "timestamp": "2026-05-02T12:30:00Z",
+        "amount": 150.75
+    }
 ]
 
 
 ## Saída esperada
-## O script irá exibir:
 
-    Total de usuários únicos
-    Lista de IDs encontrados
-
-Total de user_id únicos: 3
-IDs encontrados: {'user1', 'user2', 'user3'}
 
 
 
@@ -71,7 +90,8 @@ IDs encontrados: {'user1', 'user2', 'user3'}
 
     Arquivo JSON não encontrado
     JSON inválido
-    Estrutura inesperada (ex: ausência de user_id)
+    Evento válido
+    Evento com Estrutura inesperada (ex: ausência de user_id)
     Erros inesperados
 
 
