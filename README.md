@@ -1,4 +1,4 @@
-# 📊 # Pipeline com Python
+# 📊 # Pipeline com Python ####################################################################################################################
 
 Projeto em Python para processamento de eventos JSON, geração de estatísticas em CSV, tratamento de erros e testes unitários.
 
@@ -29,8 +29,8 @@ O projeto utiliza apenas bibliotecas nativas do Python.
 
 ---
 
-## 📂 Estrutura do projeto
-.
+## Estrutura do projeto
+
 
 PRJ_PY_JSON
 ├── GeraDados/
@@ -52,15 +52,9 @@ PRJ_PY_JSON
 
 
 
-
-
-
-
-
-
 ---
 
-## 📥 Instalação
+## Instalação ####################################################################################################################
 
 Clone o repositório:
 
