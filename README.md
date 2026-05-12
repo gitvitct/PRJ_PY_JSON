@@ -73,14 +73,14 @@ python -m venv venv
 pip install -r requirements.txt
 
 ## Executar processor.py
-cd PRJ_PY_JSON
+cd PRJ_PY_JSON/src
 python processor.py
 
 ```
 
 ## Formato do JSON esperado ####################################################################################################################
 ## O ficheiro events.json deve conter uma lista de objetos no seguinte formato:
-
+```json
 [
     {
         "user_id": "user1",
@@ -95,9 +95,10 @@ python processor.py
     }
 ]
 
-
+```
 ## Saída esperada stats.csv
 
+```csv
 metric,value
 unique_users,491
 event_login,686
@@ -105,7 +106,7 @@ event_logout,636
 event_purchase,664
 total_purchase_amount,164286.16
 average_purchase_amount,247.42
-
+```
 
 
 ## Tratamento de erros
