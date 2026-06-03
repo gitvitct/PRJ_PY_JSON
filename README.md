@@ -76,8 +76,8 @@ source venv/bin/activate
 ### Windows
 
 ```bash
-python -m venv venv
-venv\Scripts\activate
+python3 -m venv venv
+source venv/bin/activate
 ```
 
 ## Install Dependencies
@@ -96,7 +96,7 @@ Navigate to the source directory and execute the processor:
 
 ```bash
 cd src
-python processor.py
+python3 processor.py
 ```
 
 The script will:
