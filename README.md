@@ -1,104 +1,138 @@
-## Pipeline com Python ####################################################################################################################
+# 🚀 Python JSON Event Processing Pipeline
 
-Projeto em Python para processamento de eventos JSON, geração de estatísticas em CSV, tratamento de erros e testes unitários.
-
-
-# Objetivo
-
-Este projeto simula um pipeline simples de engenharia de dados responsável por:
-
-- Ler eventos de um arquivo JSON
-- Validar estrutura e timestamps
-- Filtrar eventos dos últimos 30 dias
-- Gerar métricas estatísticas
-- Registrar eventos inválidos em deadletter
-- Executar testes unitários
+A Python-based Data Engineering project that processes JSON events, generates statistical metrics in CSV format, handles invalid records through a dead-letter mechanism, and includes automated unit testing.
 
 ---
 
-## Tecnologias utilizadas
+# 📖 Overview
 
-- Python 3.8+
-  - json
-  - csv
-  - datetime
-  - unittest
+This project simulates a lightweight Data Engineering pipeline responsible for:
 
-O projeto utiliza apenas bibliotecas nativas do Python.
+* Reading events from a JSON file
+* Validating event structure and timestamps
+* Filtering events from the last 30 days
+* Generating business and operational metrics
+* Storing invalid events in a dead-letter file
+* Executing automated unit tests
 
+The solution was intentionally developed using only Python's standard library to demonstrate core programming, data processing, validation, and error-handling concepts without external dependencies.
 
 ---
 
-## Estrutura do projeto
+# 🛠️ Technologies Used
 
+* Python 3.8+
+* Built-in Libraries:
 
+  * `json`
+  * `csv`
+  * `datetime`
+  * `unittest`
+
+> No third-party packages are required.
+
+---
+
+# 📂 Project Structure
+
+```text
 PRJ_PY_JSON
+│
 ├── GeraDados/
-   └── cria_json_2026.py
-│       └── events.json
+│   ├── cria_json_2026.py
+│   └── events.json
 │
 ├── src/
-│   └── processor.py
-│   └── events.json
-│   └── stats.csv
-│   └── deadletter.json
+│   ├── processor.py
+│   ├── events.json
+│   ├── stats.csv
+│   ├── deadletter.json
 │   └── .gitignore
-│   
 │
-
 ├── requirements.txt
-├── README.md
-
-
-
+└── README.md
+```
 
 ---
 
-## Instalação ####################################################################################################################
+# ⚙️ Installation
 
-## Clone o repositório:
+## Clone the Repository
 
 ```bash
 git clone https://github.com/gitvitct/PRJ_PY_JSON.git
 cd PRJ_PY_JSON
-
-
-## Crie um ambiente virtual:
-
-python -m venv venv
-  ## source venv/bin/activate  # Linux/Mac
-  ## venv\Scripts\activate     # Windows
-
-## Instalar as dependências:
-pip install -r requirements.txt
-
-
-## Executar processor.py
-cd PRJ_PY_JSON/src
-python processor.py
-
-
 ```
 
-## Formato do JSON esperado ####################################################################################################################
-## O ficheiro events.json deve conter uma lista de objetos no seguinte formato:
+## Create a Virtual Environment
+
+### Linux / macOS
+
+```bash
+python -m venv venv
+source venv/bin/activate
+```
+
+### Windows
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+## Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+> The project uses only native Python libraries. The requirements file is provided for future extensibility.
+
+---
+
+# ▶️ Running the Application
+
+Navigate to the source directory and execute the processor:
+
+```bash
+cd src
+python processor.py
+```
+
+The script will:
+
+1. Read the JSON event file.
+2. Validate event records.
+3. Filter events from the last 30 days.
+4. Generate statistical metrics.
+5. Create a CSV report.
+6. Save invalid records to the dead-letter file.
+
+---
+
+# 📥 Expected JSON Format
+
+The `events.json` file must contain a list of event objects following the structure below:
+
 ```json
 [
-    {
-        "user_id": "user1",
-        "event_type": "login",
-        "timestamp": "2026-05-01T10:00:00Z"
-    },
-    {
-        "user_id": "user2",
-        "event_type": "purchase",
-        "timestamp": "2026-05-02T12:30:00Z",
-        "amount": 150.75
-    }
+  {
+    "user_id": "user1",
+    "event_type": "login",
+    "timestamp": "2026-05-01T10:00:00Z"
+  },
+  {
+    "user_id": "user2",
+    "event_type": "purchase",
+    "timestamp": "2026-05-02T12:30:00Z",
+    "amount": 150.75
+  }
 ]
-
 ```
-## Saída esperada stats.csv
+
+---
+
+# 📊 Example Output (`stats.csv`)
 
 ```csv
 metric,value
@@ -110,18 +144,81 @@ total_purchase_amount,164286.16
 average_purchase_amount,247.42
 ```
 
+Generated metrics include:
 
-## Tratamento de erros
-## O script trata os seguintes erros:
+* Total unique users
+* Event counts by type
+* Total purchase amount
+* Average purchase amount
 
-    Arquivo JSON não encontrado
-    JSON inválido
-    Evento válido
-    Evento com Estrutura inesperada (ex: ausência de user_id)
-    Erros inesperados
+---
 
+# 🚨 Error Handling
 
+The pipeline includes validation and error-handling mechanisms for the following scenarios:
 
-##
-##
-##
+* Missing JSON file
+* Invalid JSON syntax
+* Invalid timestamp format
+* Missing required fields
+* Unexpected event structure
+* Malformed purchase events
+* Unexpected runtime exceptions
+
+Invalid records are automatically redirected to the `deadletter.json` file for further analysis.
+
+---
+
+# 🧪 Unit Testing
+
+The project includes automated unit tests using Python's built-in `unittest` framework.
+
+Run the tests with:
+
+```bash
+python -m unittest discover
+```
+
+The tests validate:
+
+* JSON loading
+* Event filtering
+* Data validation
+* Metrics calculation
+* Dead-letter processing
+* Error handling scenarios
+
+---
+
+# 📈 Data Pipeline Flow
+
+```text
+events.json
+      │
+      ▼
+Read JSON File
+      │
+      ▼
+Validate Records
+      │
+      ├── Valid Records ──► Generate Metrics ──► stats.csv
+      │
+      └── Invalid Records ──► deadletter.json
+```
+
+---
+
+# 🎯 Learning Objectives
+
+This project demonstrates key Data Engineering concepts, including:
+
+* Data ingestion
+* Data validation
+* Data quality checks
+* Event processing
+* Dead-letter handling
+* Metrics generation
+* Automated testing
+* Python data pipelines
+
+It is designed as a portfolio project to showcase foundational Data Engineering and Python development skills.
