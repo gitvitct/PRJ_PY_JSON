@@ -69,7 +69,7 @@ cd PRJ_PY_JSON
 ### Linux / macOS
 
 ```bash
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate
 ```
 
@@ -176,7 +176,7 @@ The project includes automated unit tests using Python's built-in `unittest` fra
 Run the tests with:
 
 ```bash
-python -m unittest discover
+python3 -m unittest discover
 ```
 
 The tests validate:
